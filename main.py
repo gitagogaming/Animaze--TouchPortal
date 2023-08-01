@@ -13,6 +13,8 @@ import os
 import webbrowser
 import time
 import ast
+from sys import exit
+
 
 ### Local Imports
 from update_check import plugin_update_check, GITHUB_PLUGIN_NAME, GITHUB_USER_NAME, PLUGIN_NAME
@@ -379,6 +381,7 @@ if __name__ == "__main__":
         plugin.log.error(f"Exception in TP Client:\n{format_exc()}")
         ret = -1
     finally:
+        animaze.disconnect()
         plugin.disconnect()
         del plugin
         exit(ret)
