@@ -1,0 +1,327 @@
+{
+  "sdk": 6,
+  "version": 100,
+  "name": "Animaze",
+  "id": "gitago.Animaze",
+  "configuration": {
+    "colorDark": "#222423",
+    "colorLight": "#43a047"
+  },
+  "plugin_start_cmd": "%TP_PLUGIN_FOLDER%Animaze\\Animaze_TP.exe",
+  "plugin_start_cmd_windows": "%TP_PLUGIN_FOLDER%Animaze\\Animaze_Plugin.exe",
+  "categories": [
+    {
+      "id": "gitago.Animaze.main",
+      "name": "Animaze Main Category",
+      "imagepath": "%TP_PLUGIN_FOLDER%Animaze\\animaze_logo.png",
+      "actions": [
+        {
+          "id": "gitago.Animaze.act.selectAvatar",
+          "name": "Select an Avatar",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "Change Avatar to {$gitago.Animaze.act.selectAvatar.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.selectAvatar.choice",
+              "type": "choice",
+              "label": "The Avatar to Select",
+              "default": "",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.selectScene",
+          "name": "Select an Scene",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "Change Scene to {$gitago.Animaze.act.selectScene.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.selectScene.choice",
+              "type": "choice",
+              "label": "The Scene to Select",
+              "default": "",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.selectQuickScene",
+          "name": "Select an QuickScene",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "Change QuickScene to {$gitago.Animaze.act.selectQuickScene.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.selectQuickScene.choice",
+              "type": "choice",
+              "label": "The QuickScene to Select",
+              "default": "",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.selectPose",
+          "name": "Select a Pose",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "Change Pose to {$gitago.Animaze.act.selectPose.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.selectPose.choice",
+              "type": "choice",
+              "label": "The Pose to Select",
+              "default": "",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.selectEmote",
+          "name": "Trigger an Emote",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "Trigger the Emote:{$gitago.Animaze.act.selectEmote.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.selectEmote.choice",
+              "type": "choice",
+              "label": "The Emote to Select",
+              "default": "",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.selectIdleAnim",
+          "name": "Trigger an Idle Animation",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "Change Idle Animation to {$gitago.Animaze.act.selectIdleAnim.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.selectIdleAnim.choice",
+              "type": "choice",
+              "label": "The Idle to Select",
+              "default": "",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.setCamera_FOV",
+          "name": "Select Camera FOV",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "Change Camera FOV to {$gitago.Animaze.act.setCamera_FOV.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.setCamera_FOV.choice",
+              "type": "text",
+              "label": "The FOV to Select",
+              "default": "20"
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.startBroadcast",
+          "name": "Start Broadcast",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "{$gitago.Animaze.act.startBroadcast.choice$} the Broadcast",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.startBroadcast.choice",
+              "type": "choice",
+              "label": "Start or Stop",
+              "default": "Start",
+              "valueChoices": [
+                "Start",
+                "Stop"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.specialAction",
+          "name": "Trigger Special Action",
+          "prefix": "Prefix",
+          "type": "communicate",
+          "format": "Trigger Special Action {$gitago.Animaze.act.specialAction.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.specialAction.choice",
+              "type": "choice",
+              "label": "The Special Action to Trigger",
+              "default": "",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.cameraFOV.adjust",
+          "name": "Adjust Camera FOV",
+          "prefix": "Animaze Main Category",
+          "type": "communicate",
+          "description": "Adjust the Camera FOV by a set amount - Available in OnHold as well",
+          "format": "{$gitago.Animaze.act.cameraFOV.adjust.choice$} the Camera FOV by {$gitago.Animaze.cameraFOV.increment$}  ",
+          "tryInline": true,
+          "hasHoldFunctionality": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.cameraFOV.adjust.choice",
+              "type": "choice",
+              "label": "Increase or Decrease",
+              "default": "Increase",
+              "valueChoices": [
+                "Increase",
+                "Decrease"
+              ]
+            },
+            {
+              "id": "gitago.Animaze.cameraFOV.increment",
+              "type": "text",
+              "label": "text",
+              "default": "5"
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.setCameraTransform",
+          "name": "Set Camera Transform",
+          "prefix": "Animaze Main Category",
+          "type": "communicate",
+          "description": "Set the Camera Transform",
+          "format": "Set Camera Transform to Position X:{$gitago.Animaze.act.setCameraTransform.pos_x$} Y:{$gitago.Animaze.act.setCameraTransform.pos_y$} Z:{$gitago.Animaze.act.setCameraTransform.pos_z$} Rotation X:{$gitago.Animaze.act.setCameraTransform.rot_x$} Y:{$gitago.Animaze.act.setCameraTransform.rot_y$} Z:{$gitago.Animaze.act.setCameraTransform.rot_z$} W:{$gitago.Animaze.act.setCameraTransform.rot_w$}",
+          "tryInline": true,
+          "hasHoldFunctionality": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.setCameraTransform.pos_x",
+              "type": "text",
+              "label": "Position X",
+              "default": "0"
+            },
+            {
+              "id": "gitago.Animaze.act.setCameraTransform.pos_y",
+              "type": "text",
+              "label": "Position Y",
+              "default": "0"
+            },
+            {
+              "id": "gitago.Animaze.act.setCameraTransform.pos_z",
+              "type": "text",
+              "label": "Position Z",
+              "default": "0"
+            },
+            {
+              "id": "gitago.Animaze.act.setCameraTransform.rot_x",
+              "type": "text",
+              "label": "Rotation X",
+              "default": "0"
+            },
+            {
+              "id": "gitago.Animaze.act.setCameraTransform.rot_y",
+              "type": "text",
+              "label": "Rotation Y",
+              "default": "0"
+            },
+            {
+              "id": "gitago.Animaze.act.setCameraTransform.rot_z",
+              "type": "text",
+              "label": "Rotation Z",
+              "default": "0"
+            },
+            {
+              "id": "gitago.Animaze.act.setCameraTransform.rot_w",
+              "type": "text",
+              "label": "Rotation W",
+              "default": "1"
+            }
+          ]
+        },
+        {
+          "id": "gitago.Animaze.act.sendChatpalMessage",
+          "name": "Send Chatpal Message",
+          "prefix": "Animaze Main Category",
+          "type": "communicate",
+          "description": "Send Chatpal Message to Animaze",
+          "format": "Send Chatpal Message {$gitago.Animaze.act.sendChatpalMessage.message$} - Use {$gitago.Animaze.act.sendChatpalMessage.choice$}",
+          "tryInline": true,
+          "data": [
+            {
+              "id": "gitago.Animaze.act.sendChatpalMessage.message",
+              "type": "text",
+              "label": "The Chatpal Message to Send",
+              "default": ""
+            },
+            {
+              "id": "gitago.Animaze.act.sendChatpalMessage.choice",
+              "type": "choice",
+              "label": "The Chatpal Message to Send",
+              "default": "Local",
+              "valueChoices": [
+                "Local",
+                "AI"
+              ]
+            }
+          ]
+        }
+      ],
+      "states": [
+        {
+          "id": "gitago.Animaze.state.currentAvatar",
+          "type": "text",
+          "desc": "Current Avatar",
+          "default": ""
+        },
+        {
+          "id": "gitago.Animaze.state.currentAvatar.Image",
+          "type": "text",
+          "desc": "Current Avatar Image",
+          "default": ""
+        },
+        {
+          "id": "gitago.Animaze.state.currentFOV",
+          "type": "text",
+          "desc": "Current Camera FOV",
+          "default": ""
+        },
+        {
+          "id": "gitago.Animaze.state.currentScene",
+          "type": "text",
+          "desc": "Current Scene",
+          "default": ""
+        },
+        {
+          "id": "gitago.Animaze.state.broadcastStatus",
+          "type": "text",
+          "desc": "Broadcast Status",
+          "default": ""
+        }
+      ],
+      "events": [],
+      "connectors": []
+    }
+  ],
+  "settings": [
+    {
+      "name": "Debug",
+      "type": "text",
+      "default": "False",
+      "readOnly": false
+    }
+  ]
+}
